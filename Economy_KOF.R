@@ -15,8 +15,8 @@ library(reshape)
 urlfile="https://raw.githubusercontent.com/KOF-ch/economic-monitoring/master/data-statistikZH-monitoring/kof_indicators.csv"
 kof<-data.frame(read_csv(url(urlfile)))
 ################################
-# 
-
+#jahre vor 2019 rausnehmen 
+kof<-subset(kof, date>=as.Date("2019-01-01"))
 
 #write the final file for publication
 write.table(kof, "Economy_KOF.csv", sep=",", fileEncoding="UTF-8", row.names = F)
