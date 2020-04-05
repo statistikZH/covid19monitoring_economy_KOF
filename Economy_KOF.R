@@ -21,3 +21,4 @@ kof<-subset(kof, date>=as.Date("2019-01-01"))
 #write the final file for publication
 write.table(kof, "Economy_KOF.csv", sep=",", fileEncoding="UTF-8", row.names = F)
 
+range(kof$date)
