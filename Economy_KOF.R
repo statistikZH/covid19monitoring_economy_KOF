@@ -10,9 +10,14 @@ library(reshape)
 
 
 urlfile="https://raw.githubusercontent.com/KOF-ch/economic-monitoring/master/data/ch.shab.csv"
-shab<-data.frame(read_csv(url(urlfile)))
+shab<-data.frame(read.csv(url(urlfile)))
+
+#filter out sundays and feasts (no shab-meldungen)
+sun<-data.frame(sun=apply(with(shab, tapply(value, list(time, rubric), sum)), 1, sum)==0)
+shab<-droplevels(subset(shab, time%in%rownames(sun)[sun$sun==F]))
 shabkeys<-read.table("shab_keys.csv", sep=";", encoding = "UTF-8", header=T)
 shab$rubric<-as.factor(shab$rubric)
+
 shab<-merge(shab, shabkeys, by.x="rubric", by.y="rubric", all.x=T)
 
 shab2<-data.frame(date=as.POSIXct(paste(shab$time, "00:00:00", sep=" ")),
