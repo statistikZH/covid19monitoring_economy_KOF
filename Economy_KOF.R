@@ -39,7 +39,8 @@ kof<-data.frame(read.csv(url(urlfile)))
 ################################
 #jahre vor 2019 rausnehmen 
 
-kof<-rbind(kof, shab2)
+#kof<-rbind(kof, shab2)
+
 kof<-subset(kof, as.Date(date)>=as.Date("2019-01-01") & as.Date(date)!=Sys.Date() & variable_short!="stellen_jobroom")
 
 #write the final file for publication
