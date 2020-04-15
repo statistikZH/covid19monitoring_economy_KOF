@@ -1,0 +1,13 @@
+rubric;variable_short;variable_long
+hr;hr_eintrag;Handelsregistereintragungen
+hr01;hr_neueintrag;Neueintragungen
+hr02;hr_mutation;Mutationen
+hr03;hr_loeschung;Löschungen
+kk;hr_konkurs;Konkurse
+kk01;hr_vorl_konkursanzeige;Vorläufige Konkursanzeigen
+kk02;hr_konkurspublikation;Konkurspublikationen/Schuldenrufe
+sb;hr_schuldbetreibung;Schuldbetreibungen
+sb01;hr_grundstueck;Betreibungsamtliche Grundstücksteigerungen
+sb02;hr_zahlungsbefehl;Zahlungsbefehle
+sb03;hr_pfaendung;Pfändungsanzeigen/-urkunden
+sbkk;hr_konkurs_sb;Meldungen zu Konkurs und Schuldbetreibungen
