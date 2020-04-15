@@ -10,7 +10,7 @@ library(reshape)
 
 
 urlfile="https://raw.githubusercontent.com/KOF-ch/economic-monitoring/master/data/ch.shab.csv"
-shab<-data.frame(read.csv(url(urlfile)))
+shab<-data.frame(read.csv(url(urlfile), encoding="UTF-8"))
 
 
 #filter out sundays and feasts (no shab-meldungen)
@@ -35,7 +35,7 @@ shab2<-shab2[order(shab2$variable_short, shab2$date),]
 ################################
 # Download data
 urlfile="https://raw.githubusercontent.com/KOF-ch/economic-monitoring/master/data-statistikZH-monitoring/kof_indicators.csv"
-kof<-data.frame(read.csv(url(urlfile)))
+kof<-data.frame(read.csv(url(urlfile), encoding = "UTF-8"))
 ################################
 #jahre vor 2019 rausnehmen 
 
